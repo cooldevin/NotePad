@@ -45,6 +45,11 @@
             this.帮助ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.txtContent = new System.Windows.Forms.TextBox();
+            this.openFolder = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
+            this.selectSourceFolder = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.selectDesFolder = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,7 +75,8 @@
             this.openNote,
             this.saveNote,
             this.另存为ToolStripMenuItem,
-            this.printNote});
+            this.printNote,
+            this.openFolder});
             this.文件ToolStripMenuItem.Name = "文件ToolStripMenuItem";
             this.文件ToolStripMenuItem.Size = new System.Drawing.Size(48, 21);
             this.文件ToolStripMenuItem.Text = "文件 ";
@@ -126,14 +132,14 @@
             // fontNoteSetting
             // 
             this.fontNoteSetting.Name = "fontNoteSetting";
-            this.fontNoteSetting.Size = new System.Drawing.Size(180, 22);
+            this.fontNoteSetting.Size = new System.Drawing.Size(100, 22);
             this.fontNoteSetting.Text = "字体";
             this.fontNoteSetting.Click += new System.EventHandler(this.字体ToolStripMenuItem_Click);
             // 
             // 颜色ToolStripMenuItem
             // 
             this.颜色ToolStripMenuItem.Name = "颜色ToolStripMenuItem";
-            this.颜色ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.颜色ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.颜色ToolStripMenuItem.Text = "颜色";
             this.颜色ToolStripMenuItem.Click += new System.EventHandler(this.颜色ToolStripMenuItem_Click);
             // 
@@ -156,19 +162,68 @@
             // 
             // txtContent
             // 
-            this.txtContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtContent.Location = new System.Drawing.Point(0, 25);
+            this.txtContent.Location = new System.Drawing.Point(21, 54);
             this.txtContent.Multiline = true;
             this.txtContent.Name = "txtContent";
-            this.txtContent.Size = new System.Drawing.Size(1112, 787);
+            this.txtContent.Size = new System.Drawing.Size(887, 145);
             this.txtContent.TabIndex = 2;
             this.txtContent.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // openFolder
+            // 
+            this.openFolder.Name = "openFolder";
+            this.openFolder.Size = new System.Drawing.Size(180, 22);
+            this.openFolder.Text = "打开文件夹";
+            this.openFolder.Click += new System.EventHandler(this.openFolder_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(36, 234);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 12);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "选择源文件夹";
+            // 
+            // selectSourceFolder
+            // 
+            this.selectSourceFolder.Location = new System.Drawing.Point(131, 229);
+            this.selectSourceFolder.Name = "selectSourceFolder";
+            this.selectSourceFolder.Size = new System.Drawing.Size(75, 23);
+            this.selectSourceFolder.TabIndex = 4;
+            this.selectSourceFolder.Text = "选择";
+            this.selectSourceFolder.UseVisualStyleBackColor = true;
+            this.selectSourceFolder.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(36, 302);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(89, 12);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "选择迁移文件夹";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // selectDesFolder
+            // 
+            this.selectDesFolder.Location = new System.Drawing.Point(131, 297);
+            this.selectDesFolder.Name = "selectDesFolder";
+            this.selectDesFolder.Size = new System.Drawing.Size(75, 23);
+            this.selectDesFolder.TabIndex = 4;
+            this.selectDesFolder.Text = "选择";
+            this.selectDesFolder.UseVisualStyleBackColor = true;
+            this.selectDesFolder.Click += new System.EventHandler(this.button1_Click);
             // 
             // NotepadForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1112, 812);
+            this.Controls.Add(this.selectDesFolder);
+            this.Controls.Add(this.selectSourceFolder);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtContent);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -202,6 +257,11 @@
         private System.Windows.Forms.ToolStripMenuItem 查看ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 帮助ToolStripMenuItem;
         private System.Windows.Forms.TextBox txtContent;
+        private System.Windows.Forms.ToolStripMenuItem openFolder;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button selectSourceFolder;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button selectDesFolder;
     }
 }
 

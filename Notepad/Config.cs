@@ -20,8 +20,9 @@ namespace Notepad
             Font font = null;
             if (File.Exists(filePath))
             {
-              string content =  File.ReadAllText(filePath);
-              string[] contents = content.Split(',');
+              
+                string content = File.ReadAllText(filePath);
+                string[] contents = content.Split(',');
                 string fontFamily = contents[0];
                 float size = float.Parse(contents[1]);
                 FontStyle style = (FontStyle)Enum.Parse(typeof(FontStyle), contents[2]);

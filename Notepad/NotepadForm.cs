@@ -65,9 +65,12 @@ namespace Notepad
         private void openNote_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog= new OpenFileDialog();
-            DialogResult result =   openFileDialog.ShowDialog();
+            DialogResult result = openFileDialog.ShowDialog();
             if (result == DialogResult.OK)
             {
+                string fileName = openFileDialog.SafeFileName;
+                FileInfo fileInfo = new FileInfo(fileName);
+                Console.WriteLine(fileInfo.Directory.ToString());
                 this.txtContent.Text = File.ReadAllText(openFileDialog.FileName);
             }
             
@@ -95,6 +98,36 @@ namespace Notepad
             {
                 this.txtContent.ForeColor = colorDialog.Color;
             }
+        }
+
+        private void openFolder_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog dilog = new FolderBrowserDialog();
+            dilog.Description = "请选择文件夹";
+            if (dilog.ShowDialog() == DialogResult.OK || dilog.ShowDialog() == DialogResult.Yes)
+            {
+                string   path = dilog.SelectedPath;
+                Console.WriteLine(path);
+
+            }
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog dilog = new FolderBrowserDialog();
+            dilog.Description = "请选择文件夹";
+            if (dilog.ShowDialog() == DialogResult.OK || dilog.ShowDialog() == DialogResult.Yes)
+            {
+                string path = dilog.SelectedPath;
+                Console.WriteLine(path);
+
+            }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+        
         }
     }
 }
