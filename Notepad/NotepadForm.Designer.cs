@@ -37,6 +37,7 @@
             this.saveNote = new System.Windows.Forms.ToolStripMenuItem();
             this.另存为ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printNote = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.编辑ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.格式ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fontNoteSetting = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,11 +46,14 @@
             this.帮助ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.txtContent = new System.Windows.Forms.TextBox();
-            this.openFolder = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.selectSourceFolder = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.selectDesFolder = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -114,6 +118,13 @@
             this.printNote.Size = new System.Drawing.Size(180, 22);
             this.printNote.Text = "打印";
             // 
+            // openFolder
+            // 
+            this.openFolder.Name = "openFolder";
+            this.openFolder.Size = new System.Drawing.Size(180, 22);
+            this.openFolder.Text = "打开文件夹";
+            this.openFolder.Click += new System.EventHandler(this.openFolder_Click);
+            // 
             // 编辑ToolStripMenuItem
             // 
             this.编辑ToolStripMenuItem.Name = "编辑ToolStripMenuItem";
@@ -169,13 +180,6 @@
             this.txtContent.TabIndex = 2;
             this.txtContent.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // openFolder
-            // 
-            this.openFolder.Name = "openFolder";
-            this.openFolder.Size = new System.Drawing.Size(180, 22);
-            this.openFolder.Text = "打开文件夹";
-            this.openFolder.Click += new System.EventHandler(this.openFolder_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -205,22 +209,64 @@
             this.label2.Text = "选择迁移文件夹";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // selectDesFolder
+            // label3
             // 
-            this.selectDesFolder.Location = new System.Drawing.Point(131, 297);
-            this.selectDesFolder.Name = "selectDesFolder";
-            this.selectDesFolder.Size = new System.Drawing.Size(75, 23);
-            this.selectDesFolder.TabIndex = 4;
-            this.selectDesFolder.Text = "选择";
-            this.selectDesFolder.UseVisualStyleBackColor = true;
-            this.selectDesFolder.Click += new System.EventHandler(this.button1_Click);
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(367, 234);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(89, 12);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "源文件夹路径：";
+            this.label3.Click += new System.EventHandler(this.label3_Click_1);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(474, 239);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 12);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "        ";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(131, 296);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "选择";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(367, 301);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(101, 12);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "迁移文件夹路径：";
+            this.label5.Click += new System.EventHandler(this.label3_Click_1);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(474, 302);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(53, 12);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "        ";
             // 
             // NotepadForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1112, 812);
-            this.Controls.Add(this.selectDesFolder);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.selectSourceFolder);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -261,7 +307,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button selectSourceFolder;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button selectDesFolder;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }
 

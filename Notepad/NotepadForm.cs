@@ -108,7 +108,8 @@ namespace Notepad
             {
                 string   path = dilog.SelectedPath;
                 Console.WriteLine(path);
-
+              
+            
             }
 
         }
@@ -121,13 +122,48 @@ namespace Notepad
             {
                 string path = dilog.SelectedPath;
                 Console.WriteLine(path);
-
+                this.Invoke(new Action(() =>
+                {
+                    this.label4.Text = path;
+                }
+                ));
             }
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
         
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            FolderBrowserDialog dilog = new FolderBrowserDialog();
+            dilog.Description = "请选择文件夹";
+            if (dilog.ShowDialog() == DialogResult.OK || dilog.ShowDialog() == DialogResult.Yes)
+            {
+                string path = dilog.SelectedPath;
+                Console.WriteLine(path);
+                this.Invoke(new Action(() =>
+                {
+                    this.label6.Text = path;
+                }
+                ));
+            }
         }
     }
 }
